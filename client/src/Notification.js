@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Snackbar from 'material-ui/Snackbar';
+import {Snackbar} from '@material-ui/core';
 
 class Notification extends Component {
     handleClose = () => {

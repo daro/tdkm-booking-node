@@ -9,4 +9,4 @@ export default makeExecutableSchema({
     typeDefs: [Base, Tweet, User, Stat],
     resolvers,
     logger: { log: e => console.log(e) },
-});
+})

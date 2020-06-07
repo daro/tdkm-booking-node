@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { withStyles, createMuiTheme } from 'material-ui/styles';
-import Button from 'material-ui/Button';
-import { LinearProgress } from 'material-ui/Progress';
-import { compose, gql, graphql } from 'react-apollo';
+import { withStyles, createMuiTheme } from '@material-ui/core/styles';
+import {Button} from '@material-ui/core';
+import { LinearProgress } from '@material-ui/core';
+import { graphql } from 'react-apollo';
+import gql from "graphql-tag";
+import {compose} from "lodash";
 import { withRouter } from 'react-router';
 import { userFragment, tweetFragment } from './fragments';
 import { homePageQuery, homePageQueryVariables } from './HomePage';
@@ -82,7 +84,7 @@ const mutation = gql`
     ${tweetFragment}
 `;
 
-export default compose(
+export default () =>  compose(
     withRouter,
     connect(null, { notify: notifyAction }),
     graphql(mutation, {

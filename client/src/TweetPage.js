@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { gql, graphql } from 'react-apollo';
-import { LinearProgress } from 'material-ui/Progress';
-
+import { graphql } from 'react-apollo';
+import { LinearProgress } from '@material-ui/core';
+import  gql from "graphql-tag";
 import Tweet from './Tweet';
 import { userFragment, tweetFragment } from './fragments';
 
@@ -48,5 +48,5 @@ export const tweetPageQuery = gql`
 `;
 
 export default graphql(tweetPageQuery, {
-    options: ({ match }) => ({ variables: { id: match.params.id } }) 
+    options: ({ match }) => ({ variables: { id: match.params.id } })
 })(TweetPage);

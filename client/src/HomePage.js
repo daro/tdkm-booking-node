@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { compose, gql, graphql } from 'react-apollo';
-import { LinearProgress } from 'material-ui/Progress';
-import Button from 'material-ui/Button';
-import { withStyles, createMuiTheme } from 'material-ui/styles';
+import { graphql } from 'react-apollo';
+import gql from "graphql-tag";
+import {compose} from "lodash";
+import {LinearProgress} from "@material-ui/core";
+import Button from '@material-ui/core/Button';
+import { withStyles, createMuiTheme } from '@material-ui/core/styles';
 
 import Notification from './Notification';
 import Tweet from './Tweet';
@@ -32,7 +34,7 @@ class HomePage extends Component {
     }
 
     render() {
-        const { classes, loading, notifications, tweets } = this.props; 
+        const { classes, loading, notifications, tweets } = this.props;
         return (
             <div>
                 {loading && <LinearProgress />}
@@ -100,7 +102,7 @@ export const homePageQueryVariables = { limit: 5, skip: 0 };
 
 const mapStateToProps = state => ({ notifications: state.notifications });
 
-export default compose(
+export default () => compose(
     connect(mapStateToProps, { removeNotification: removeNotificationAction }),
     graphql(homePageQuery, {
         options: {

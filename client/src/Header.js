@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import AppBar from 'material-ui/AppBar';
-import Avatar from 'material-ui/Avatar';
-import IconButton from 'material-ui/IconButton';
-import ModeEditIcon from 'material-ui-icons/ModeEdit';
-import Toolbar from 'material-ui/Toolbar';
-import Typography from 'material-ui/Typography';
-import { withStyles, createMuiTheme } from 'material-ui/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Avatar from '@material-ui/core/Avatar';
+import IconButton from '@material-ui/core/IconButton';
+import ModeEditIcon from '@material-ui/icons/EditSharp';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import { withStyles, createMuiTheme } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 
 const styleSheet = createMuiTheme(theme => ({
@@ -25,7 +25,7 @@ const Header = ({ classes, currentUser }) => (
                 Home
             </Typography>
             <IconButton component={Link} to="/new">
-                <ModeEditIcon /> 
+                <ModeEditIcon />
             </IconButton>
         </Toolbar>
     </AppBar>

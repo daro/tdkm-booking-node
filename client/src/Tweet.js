@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Card, { CardContent } from 'material-ui/Card';
-import Avatar from 'material-ui/Avatar';
-import Typography from 'material-ui/Typography';
-import CachedIcon from 'material-ui-icons/Cached';
-import FavoriteBorderIcon from 'material-ui-icons/FavoriteBorder';
-import ChatBubbleOutlineIcon from 'material-ui-icons/ChatBubbleOutline';
-import { withStyles, createMuiTheme } from 'material-ui/styles';
+import Card from '@material-ui/core/Card';
+import CardContent from "@material-ui/core/CardContent";
+import Avatar from '@material-ui/core/Avatar';
+import Typography from '@material-ui/core/Typography';
+import CachedIcon from '@material-ui/icons/Cached';
+import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
+import { withStyles, createMuiTheme } from '@material-ui/core';
 import distanceInWordsToNow from 'date-fns/distance_in_words_to_now';
 import { Link } from 'react-router-dom';
 
@@ -74,7 +75,7 @@ const Tweet = ({ classes, tweet, showDetailsLink }) => (
                     </Typography>
                     <div className={classes.buttons}>
                         <div className={classes.stats}>
-                            <ChatBubbleOutlineIcon className={classes.icon} /> 
+                            <ChatBubbleOutlineIcon className={classes.icon} />
                             {tweet.Stats.responses}
                         </div>
                         <div className={classes.stats}>

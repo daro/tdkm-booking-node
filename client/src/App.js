@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { gql, graphql } from 'react-apollo';
+import { graphql } from 'react-apollo';
+import gql from "graphql-tag";
 import { userFragment } from './fragments';
 
 import HomePage from './HomePage';
@@ -8,11 +9,10 @@ import Header from './Header';
 import TweetPage from './TweetPage';
 import NewTweetPage from './NewTweetPage';
 
-const App = ({ data: { currentUser } }) => 
+const App = ({ data: { currentUser } }) =>
     <Router>
         <div>
             <Header currentUser={currentUser} />
-            
             <Switch>
                 <Route exact path="/" component={HomePage} />
                 {/* This route must come before the one with a parameter to be matched */}
