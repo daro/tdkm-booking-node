@@ -9,9 +9,12 @@ jobs:
       - checkout
       - node/with-cache:
           steps:
-            - run: cd service 
+            - run: npm install yarn 
             - run: yarn install
-            - run: yarn test
+            - run: lerna bootstrap
+            - run: cd packages/service 
+            - run: yarn 
+            - run: yarn test  
 workflows:
     build-and-test:
       jobs:
